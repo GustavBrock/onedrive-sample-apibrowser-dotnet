@@ -1,3 +1,16 @@
+# OneDrive API Browser Sample 2.0 (2019)
+
+This is a minimal update to the original sample, now using the TokenCacheHelper and able to compile in VS2017+.
+
+In App.xaml.cs, insert your Client Id here:
+
+```csharp
+private static string ClientId = "00000000-0000-0000-0000-000000000000";
+```
+
+2019-05-11
+
+
 # OneDrive API Browser Sample
 
 The OneDriveAPIBrowser sample is a [Windows Forms](https://msdn.microsoft.com/en-us/library/dd30h2yb(v=vs.110).aspx) app sample that uses the [Microsoft Graph .NET Client Library](https://github.com/microsoftgraph/msgraph-sdk-dotnet) for C#/.NET. In this sample, users can browse files and folders that are stored on OneDrive, and view metadata.
