@@ -17,6 +17,5 @@ namespace OneDriveApiBrowser
         public const string ExpiresInKeyName = "expires_in";
         public const string ErrorKeyName = "error";
         public const string ErrorDescriptionKeyName = "error_description";
-
     }
 }

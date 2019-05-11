@@ -10,11 +10,7 @@ namespace OneDriveApiBrowser
 {
     public class AuthenticationHelper
     {
-        // The Client ID is used by the application to uniquely identify itself to the v2.0 authentication endpoint.
-        static string clientId = FormBrowser.MsaClientId;
         public static string[] Scopes = { "Files.ReadWrite.All" };
-
-        public static PublicClientApplication IdentityClientApp = new PublicClientApplication(clientId);
 
         public static string TokenForUser = null;
         public static DateTimeOffset Expiration;
@@ -39,7 +35,6 @@ namespace OneDriveApiBrowser
                                 requestMessage.Headers.Authorization = new AuthenticationHeaderValue("bearer", token);
                                 // This header has been added to identify our sample in the Microsoft Graph service.  If extracting this code for your project please remove.
                                 requestMessage.Headers.Add("SampleID", "uwp-csharp-apibrowser-sample");
-
                             }));
                     return graphClient;
                 }
@@ -53,7 +48,6 @@ namespace OneDriveApiBrowser
             return graphClient;
         }
 
-
         /// <summary>
         /// Get Token for User.
         /// </summary>
@@ -61,19 +55,24 @@ namespace OneDriveApiBrowser
         public static async Task<string> GetTokenForUserAsync()
         {
             AuthenticationResult authResult;
+            var app = App.PublicClientApp;
+            var accounts = await app.GetAccountsAsync();
+            var firstAccount = accounts.FirstOrDefault();
+
             try
             {
-                authResult = await IdentityClientApp.AcquireTokenSilentAsync(Scopes);
-                TokenForUser = authResult.Token;
+                authResult = await app.AcquireTokenSilent(Scopes, firstAccount)
+                    .ExecuteAsync();
+                TokenForUser = authResult.AccessToken;
             }
 
             catch (Exception)
             {
                 if (TokenForUser == null || Expiration <= DateTimeOffset.UtcNow.AddMinutes(5))
                 {
-                    authResult = await IdentityClientApp.AcquireTokenAsync(Scopes);
-
-                    TokenForUser = authResult.Token;
+                    authResult = await app.AcquireTokenInteractive(Scopes)
+                        .ExecuteAsync();                  ;
+                    TokenForUser = authResult.AccessToken;
                     Expiration = authResult.ExpiresOn;
                 }
             }
@@ -84,15 +83,23 @@ namespace OneDriveApiBrowser
         /// <summary>
         /// Signs the user out of the service.
         /// </summary>
-        public static void SignOut()
+        public static async void SignOut()
         {
-            foreach (var user in IdentityClientApp.Users)
+            var accounts = await App.PublicClientApp.GetAccountsAsync();
+            if (accounts.Any())
             {
-                user.SignOut();
+                try
+                {
+                    await App.PublicClientApp.RemoveAsync(accounts.FirstOrDefault());
+                }
+                catch (MsalException ex)
+                {
+//                    ResultText.Text = $"Error signing-out user: {ex.Message}";
+                    Console.WriteLine($"Error signing-out user: {ex.Message}");
+                }
             }
             graphClient = null;
             TokenForUser = null;
-
         }
 
     }

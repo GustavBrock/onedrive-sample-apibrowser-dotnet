@@ -118,7 +118,7 @@
             this.linkLabelOneDriveRoot.TabIndex = 0;
             this.linkLabelOneDriveRoot.TabStop = true;
             this.linkLabelOneDriveRoot.Text = "OneDrive";
-            this.linkLabelOneDriveRoot.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelBreadcrumb_LinkClicked);
+            this.linkLabelOneDriveRoot.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkLabelBreadcrumb_LinkClicked);
             // 
             // objectBrowser
             // 
@@ -157,7 +157,7 @@
             this.menuStrip1.Size = new System.Drawing.Size(988, 32);
             this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.MenuStrip1_ItemClicked);
             // 
             // fileToolStripMenuItem
             // 
@@ -178,7 +178,7 @@
             this.signInMsaToolStripMenuItem.Name = "signInMsaToolStripMenuItem";
             this.signInMsaToolStripMenuItem.Size = new System.Drawing.Size(258, 24);
             this.signInMsaToolStripMenuItem.Text = "Sign In...";
-            this.signInMsaToolStripMenuItem.Click += new System.EventHandler(this.signInMsaToolStripMenuItem_Click);
+            this.signInMsaToolStripMenuItem.Click += new System.EventHandler(this.SignInMsaToolStripMenuItem_Click);
             // 
             // signOutToolStripMenuItem
             // 
@@ -186,7 +186,7 @@
             this.signOutToolStripMenuItem.Size = new System.Drawing.Size(258, 24);
             this.signOutToolStripMenuItem.Text = "Sign Out";
             this.signOutToolStripMenuItem.Visible = false;
-            this.signOutToolStripMenuItem.Click += new System.EventHandler(this.signOutToolStripMenuItem_Click);
+            this.signOutToolStripMenuItem.Click += new System.EventHandler(this.SignOutToolStripMenuItem_Click);
             // 
             // toolStripMenuItem3
             // 
@@ -198,7 +198,7 @@
             this.getChangesHereToolStripMenuItem.Name = "getChangesHereToolStripMenuItem";
             this.getChangesHereToolStripMenuItem.Size = new System.Drawing.Size(258, 24);
             this.getChangesHereToolStripMenuItem.Text = "Get Changes Here";
-            this.getChangesHereToolStripMenuItem.Click += new System.EventHandler(this.getChangesHereToolStripMenuItem_Click);
+            this.getChangesHereToolStripMenuItem.Click += new System.EventHandler(this.GetChangesHereToolStripMenuItem_Click);
 
             // 
             // deleteSelectedItemToolStripMenuItem
@@ -207,7 +207,7 @@
             this.deleteSelectedItemToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.Delete;
             this.deleteSelectedItemToolStripMenuItem.Size = new System.Drawing.Size(258, 24);
             this.deleteSelectedItemToolStripMenuItem.Text = "Delete Selected Item...";
-            this.deleteSelectedItemToolStripMenuItem.Click += new System.EventHandler(this.deleteSelectedItemToolStripMenuItem_Click);
+            this.deleteSelectedItemToolStripMenuItem.Click += new System.EventHandler(this.DeleteSelectedItemToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -219,7 +219,7 @@
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(258, 24);
             this.exitToolStripMenuItem.Text = "E&xit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 
             // uploadFileToolStripMenuItem
             // 
@@ -239,7 +239,7 @@
             this.simpleUploadToolStripMenuItem.Name = "simpleUploadToolStripMenuItem";
             this.simpleUploadToolStripMenuItem.Size = new System.Drawing.Size(213, 24);
             this.simpleUploadToolStripMenuItem.Text = "Simple - Path-based";
-            this.simpleUploadToolStripMenuItem.Click += new System.EventHandler(this.simpleUploadToolStripMenuItem_Click);
+            this.simpleUploadToolStripMenuItem.Click += new System.EventHandler(this.SimpleUploadToolStripMenuItem_Click);
 
             // 
             // simpleIDbasedToolStripMenuItem
@@ -247,7 +247,7 @@
             this.simpleIDbasedToolStripMenuItem.Name = "simpleIDbasedToolStripMenuItem";
             this.simpleIDbasedToolStripMenuItem.Size = new System.Drawing.Size(213, 24);
             this.simpleIDbasedToolStripMenuItem.Text = "Simple - ID-based";
-            this.simpleIDbasedToolStripMenuItem.Click += new System.EventHandler(this.simpleIDbasedToolStripMenuItem_Click);
+            this.simpleIDbasedToolStripMenuItem.Click += new System.EventHandler(this.SimpleIDbasedToolStripMenuItem_Click);
 
             // 
             // toolStripMenuItem2
@@ -261,7 +261,7 @@
             this.createFolderToolStripMenuItem.Name = "createFolderToolStripMenuItem";
             this.createFolderToolStripMenuItem.Size = new System.Drawing.Size(213, 24);
             this.createFolderToolStripMenuItem.Text = "Create Folder...";
-            this.createFolderToolStripMenuItem.Click += new System.EventHandler(this.createFolderToolStripMenuItem_Click);
+            this.createFolderToolStripMenuItem.Click += new System.EventHandler(this.CreateFolderToolStripMenuItem_Click);
 
             // 
             // downloadToolStripMenuItem
@@ -277,7 +277,7 @@
             this.saveSelectedFileToolStripMenuItem.Name = "saveSelectedFileToolStripMenuItem";
             this.saveSelectedFileToolStripMenuItem.Size = new System.Drawing.Size(206, 24);
             this.saveSelectedFileToolStripMenuItem.Text = "Save Selected File...";
-            this.saveSelectedFileToolStripMenuItem.Click += new System.EventHandler(this.saveSelectedFileToolStripMenuItem_Click);
+            this.saveSelectedFileToolStripMenuItem.Click += new System.EventHandler(this.SaveSelectedFileToolStripMenuItem_Click);
 
             // 
             // FormBrowser

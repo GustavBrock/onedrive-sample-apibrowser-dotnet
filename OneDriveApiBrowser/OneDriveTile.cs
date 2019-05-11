@@ -106,7 +106,6 @@ namespace OneDriveApiBrowser
                 }
                 catch (ServiceException)
                 {
-
                     // Just swallow not found. We don't want an error popup and we just won't render a thumbnail
                     return null;
                 }
